@@ -40,11 +40,11 @@ class EmployeeController extends Controller
     {
         //create post
         $employee = Employees::create([
-            'fullname'     => $request->fullname,
-            'email'     => $request->email,
-            'mobilephone'     => $request->mobilephone,
-            'date_of_birth'     => $request->date_of_birth,
-            'address'   => $request->address,
+            'fullname'      => $request->fullname,
+            'email'         => $request->email,
+            'mobilephone'   => $request->mobilephone,
+            'date_of_birth' => $request->date_of_birth,
+            'address'       => $request->address,
         ]);
 
         //return response
@@ -79,14 +79,14 @@ class EmployeeController extends Controller
         //find post by ID
         $employee = Employees::find($id);
 
-            //update post without image
-            $employee->update([
-                'fullname'     => $request->fullname,
-                'email'     => $request->email,
-                'mobilephone'     => $request->mobilephone,
-                'date_of_birth'     => $request->date_of_birth,
-                'address'   => $request->address,
-            ]);
+        //update post without image
+        $employee->update([
+            'fullname'     => $request->fullname,
+            'email'     => $request->email,
+            'mobilephone'     => $request->mobilephone,
+            'date_of_birth'     => $request->date_of_birth,
+            'address'   => $request->address,
+        ]);
 
         //return response
         return new EmployeeResource('success', 'Data Post Berhasil Diubah!', $employee);
@@ -100,6 +100,7 @@ class EmployeeController extends Controller
      */
     public function destroy($id)
     {
+        // dd($id);
 
         //find post by ID
         $employee = Employees::find($id);
